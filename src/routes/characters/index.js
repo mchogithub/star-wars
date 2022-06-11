@@ -29,11 +29,11 @@ export default function CharactersIndexPage() {
   const pages = Math.ceil(Number(characters.count) / 10);
 
   const genders = {
-    none: "gray",
-    male: "green",
-    female: "red",
-    "n/a": "indigo",
-    hermaphrodite: "purple",
+    none: "bg-gray-100",
+    male: "bg-green-100",
+    female: "bg-red-100",
+    "n/a": "bg-indigo-100",
+    hermaphrodite: "bg-purple-100",
   };
 
   return (
@@ -62,11 +62,9 @@ export default function CharactersIndexPage() {
                         className="ml-2 flex flex-shrink-0"
                       >
                         <span
-                          className={`inline-flex rounded-full bg-${
+                          className={`inline-flex rounded-full ${
                             genders[item.gender]
-                          }-100 px-2 text-xs font-semibold leading-5 text-${
-                            genders[item.gender]
-                          }-800`}
+                          } px-2 text-xs font-semibold leading-5 text-green-800`}
                         >
                           {item.gender}
                         </span>
