@@ -1,0 +1,15 @@
+{
+  "exclude": ["../node_modules/@testing-library/jest-dom"],
+  "include": [
+    "./index.js",
+    "component/**/*",
+    "e2e/**/*",
+    "plugins/**/*",
+    "support/**/*",
+    "../node_modules/cypress",
+    "../node_modules/@testing-library/cypress"
+  ],
+  "compilerOptions": {
+    "baseUrl": "../src"
+  }
+}

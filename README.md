@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with Star Wars App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -16,8 +16,13 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner using Cypress Component Testing.\
+See the section about [running tests](https://docs.cypress.io/) for more information.
+
+### `npm test:e2e:dev`
+
+Launches the Cypress App for debug e2e and component test.\
+See the section about [running tests](https://docs.cypress.io/guides/guides/command-line#cypress-open) for more information.
 
 ### `npm run build`
 

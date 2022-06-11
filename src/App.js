@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import CharacterIndexPage from "routes/characters";
+import {
+  CharacterDetail,
+  DialogCharacterDetail,
+} from "routes/characters/detail";
 
 function App() {
+  let location = useLocation();
+  let state = location.state;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container m-10 mx-auto rounded-xl border bg-gray-200 p-8 shadow">
+      <p className="mb-5 text-center text-3xl font-bold text-gray-700">
+        Star Wars
+      </p>
+
+      <Routes location={state?.backgroundLocation || location}>
+        <Route index element={<CharacterIndexPage />} />
+        <Route path="characters" element={<CharacterIndexPage />} />
+        <Route path="characters/:id" element={<CharacterDetail />} />
+      </Routes>
+
+      {state?.backgroundLocation && (
+        <Routes>
+          <Route path="characters/:id" element={<DialogCharacterDetail />} />
+        </Routes>
+      )}
     </div>
   );
 }
